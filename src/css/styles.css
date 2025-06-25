@@ -1,0 +1,56 @@
+@import url(reset.css);
+
+header {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	background-image: url("../images/header-res.png");
+	background-repeat: no-repeat;
+	padding: 30px 25px;
+	height: 505px;
+	object-fit: contain;
+	gap: 25px;
+}
+
+header h1 {
+	font-family: "Luckiest Guy", cursive;
+	text-transform: uppercase;
+	width: 250px;
+	font-weight: 400px;
+	font-size: 32px;
+}
+
+header p {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400px;
+	font-size: 16px;
+	width: 350px;
+	line-height: 1.5;
+}
+
+header button {
+	text-decoration: none;
+	width: 381px;
+	height: 54px;
+	border: none;
+	border-radius: 28px;
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+}
+
+.btn-download {
+	
+}
+
+.btn-navegador {
+	background-color: #23272A;
+	color: white;
+
+}
+
+
+
+
+footer h1 {
+	font-family: "Luckiest Guy", cursive;
+}
