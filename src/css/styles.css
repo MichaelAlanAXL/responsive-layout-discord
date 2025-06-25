@@ -1,14 +1,17 @@
 @import url(reset.css);
 
-header {
-	display: flex;
+/* mobile first */
+header .header-container {
+	display: grid;
 	flex-direction: column;
 	color: white;
 	background-image: url("../images/header-res.png");
 	background-repeat: no-repeat;
-	padding: 30px 25px;
-	height: 505px;
-	object-fit: contain;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	min-height: 505px;
+	padding: 60px 50px;
 	gap: 25px;
 }
 
@@ -16,21 +19,22 @@ header h1 {
 	font-family: "Luckiest Guy", cursive;
 	text-transform: uppercase;
 	width: 250px;
-	font-weight: 400px;
 	font-size: 32px;
 }
 
 header p {
 	font-family: "Open Sans", sans-serif;
-	font-weight: 400px;
+	font-weight: 400;
 	font-size: 16px;
-	width: 350px;
+	width: 100%;
+	max-width: 400px;
 	line-height: 1.5;
 }
 
 header button {
 	text-decoration: none;
-	width: 381px;
+	width: 100%;
+	max-width: 381px;
 	height: 54px;
 	border: none;
 	border-radius: 28px;
@@ -38,19 +42,193 @@ header button {
 	font-size: 16px;
 }
 
-.btn-download {
-	
+.btn-download-windows {
+	display: none;	
 }
 
 .btn-navegador {
 	background-color: #23272A;
 	color: white;
+}
+
+.section {
+	display: grid;
+	flex-direction: column;
+	min-width: 428px;
+	height: 573px;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: grid;
+	grid-template: 1fr / 3fr;
+	padding: 0px 80px;
+	gap: 30px;
+}
+
+.container p {
+	color: #23272A;
+	font-size: 1rem;
+	font-weight: 400;
+	width: 100%;
+	line-height: 1.5;
+}
+
+.container h2 {
+	color: #23272A;
+	font-weight: 800;
+	font-size: 24px;
+}
+
+.container.luckiest h2 {
+	font-family: "Luckiest Guy", cursive;
+	font-size: 32px;
+	line-height: 100%;
+}
+
+footer {
+	display: flex;
+	background-color: #23272A;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	height: 140px;
+}
+
+footer img {
+	width: 162px;
+	height: 45px;
+}
+
+section:nth-child(even) {
+	background-color: #F6F6F6;
 
 }
 
+/* layout tablets */
+@media (min-width: 630px) {
+	header .header-container {
+		background-image: url("../images/header-desktop.png");
+		align-items: center;
+	}
+}
+
+/* layout para telas maiores */
+@media (min-width: 920px) {
+	header .header-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto auto;
+		grid-template-areas:
+			"titulo titulo" 
+			"paragr paragr"
+			"btn1 btn2";
+		align-items: center;
+		justify-items: center;
+	}
+
+	header img {
+		background-repeat: no-repeat;
+	}
+
+	.header-container h1 {
+		grid-area: titulo;
+	}
 
 
+	.header-container p {
+		grid-area: paragr;
+	}
 
-footer h1 {
-	font-family: "Luckiest Guy", cursive;
+	.btn-download-windows {
+		display: unset;
+		place-self: center end;
+		transition-duration: 0.6s;
+	}
+
+	.btn-download-windows:hover {
+		color: white;
+		background-color: #23272A;
+	}
+
+	.btn-download-android {
+		display: none;
+	}
+
+	.btn-download {
+		grid-area: btn1;
+		place-self: center end;
+		justify-items: center;
+		cursor: pointer;
+		transition-duration: 0.6s;
+	}
+
+	.btn-download:hover {
+		color: white;
+		background-color: #23272A;
+	}
+
+	.btn-navegador {
+		grid-area: btn2;
+		place-self: center start;
+		cursor: pointer;
+		transition-duration: 0.6s;
+	}
+
+	.btn-navegador:hover {
+		color: #23272A;
+		background-color: white;
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		gap: 1rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.container img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.text {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.final .container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1.5rem;
+	}
+
+	.final .container .text h2 {
+		justify-content: center;
+		font-size: 40px;
+	}
+
+	.final .container .text p {
+		margin-top: 10px;
+		max-width: 802px;
+	}
+
+	.final .container img {
+	}
+
+	.section.final {
+		margin-bottom: 8rem;
+	}
+
+	section:nth-child(even) {
+		background-color: #F6F6F6;
+
+	}
 }
