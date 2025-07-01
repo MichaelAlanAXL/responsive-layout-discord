@@ -54,7 +54,8 @@ header button {
 .section {
 	display: grid;
 	flex-direction: column;
-	min-width: 428px;
+	width: 100%;
+	overflow-x: hidden;
 	height: 573px;
 	justify-content: center;
 	align-items: center;
